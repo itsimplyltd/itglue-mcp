@@ -7,6 +7,7 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm ci
+RUN npm audit signatures
 
 # Copy source and build
 COPY . .
