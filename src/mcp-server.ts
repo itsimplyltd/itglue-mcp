@@ -330,6 +330,8 @@ export class ITGlueClient {
 
     const response = await fetch(url, {
       method: "GET",
+      // A vendor redirect must never carry our credentials to another host.
+      redirect: "error",
       headers: {
         ...this.authHeaders(),
         "Content-Type": "application/vnd.api+json",
@@ -374,6 +376,8 @@ export class ITGlueClient {
 
     const response = await fetch(url, {
       method: "POST",
+      // A vendor redirect must never carry our credentials to another host.
+      redirect: "error",
       headers: {
         ...this.authHeaders(),
         "Content-Type": "application/vnd.api+json",
@@ -403,6 +407,8 @@ export class ITGlueClient {
 
     const response = await fetch(url, {
       method: "PATCH",
+      // A vendor redirect must never carry our credentials to another host.
+      redirect: "error",
       headers: {
         ...this.authHeaders(),
         "Content-Type": "application/vnd.api+json",
@@ -432,6 +438,8 @@ export class ITGlueClient {
 
     const response = await fetch(url, {
       method: "DELETE",
+      // A vendor redirect must never carry our credentials to another host.
+      redirect: "error",
       headers: {
         ...this.authHeaders(),
         Accept: "application/vnd.api+json",
